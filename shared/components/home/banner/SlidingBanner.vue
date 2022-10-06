@@ -1,9 +1,7 @@
 <template>
-  <main>
-    <header>Header nè</header>
-    <Nuxt/>
-    <footer>Footer nè</footer>
-  </main>
+  <div>
+    sliding banner nè
+  </div>
 </template>
 
 <script>
@@ -11,7 +9,7 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  name: 'ErrorLayout',
+  name: 'SlidingBannerComponent',
 
   setup() {
     return {}
