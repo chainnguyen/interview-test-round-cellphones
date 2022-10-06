@@ -1,0 +1,99 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+
+body {
+  font-family: $font-family-sans-serif !important;
+  color: $default-color !important;
+  background-color: $white !important;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: $font-size-base;
+  min-height: 100%;
+  @media #{$info-ipad} {
+    font-size: 14px;
+  }
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  color: #0053FF!important;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  vertical-align: bottom;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 0.3vw;
+  word-break: break-all;
+}
+
+p {
+  word-break: break-all;
+  margin: 0;
+}
+
+// ---- Flex box ----
+.is-flex {
+  display: flex!important;
+}
+.is-flex-direction-column {
+  flex-direction: column!important;
+}
+.is-justify-content-between {
+  justify-content: space-between!important;
+}
+.is-justify-content-start {
+  justify-content: flex-start!important;
+}
+.is-justify-content-end {
+  justify-content: flex-end!important;
+}
+.is-justify-content-center {
+  justify-content: center!important;
+}
+.is-align-content-center {
+  align-content: center!important;
+}
+// ---- Flex box - END ----
+
+// ---- Text ----
+.has-text-white {
+  color: #fff!important;
+}
+// ---- Text - END ----

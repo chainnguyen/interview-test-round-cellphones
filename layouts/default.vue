@@ -1,6 +1,8 @@
 <template>
   <main>
+    <header>Header nè</header>
     <Nuxt/>
+    <footer>Footer nè</footer>
   </main>
 </template>
 
@@ -10,8 +12,6 @@ import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   name: 'DefaultLayout',
-
-  middleware: ['guards/auth-guard', 'guards/login-guard'],
 
   setup() {
     return {}
