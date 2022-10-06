@@ -3,9 +3,13 @@
 
 body {
   font-family: $font-family-sans-serif !important;
-  color: $default-color !important;
+  color: $background-color !important;
   background-color: $white !important;
   word-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  line-height: 1.5;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -14,14 +18,23 @@ body {
   scroll-behavior: smooth;
 }
 
+
 html {
   font-size: $font-size-base;
   min-height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+ -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   @media #{$info-ipad} {
     font-size: 14px;
   }
 }
-
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -68,6 +81,43 @@ p {
   margin: 0;
 }
 
+// ---- Layout ----
+.cps-page {
+  overflow: hidden;
+
+  .cps-body {
+    margin-top: 1rem;
+    min-height: 90vh;
+  }
+}
+
+.cps-container {
+  width: 1200px;
+  margin: 0 auto;
+  display: block;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  @media #{$info-laptop-smallest} {
+    width: 100%!important;
+    max-width: 1200px!important;
+    padding: 0 10px;
+  }
+}
+
+.cps-footer {
+  margin-top: 20px;
+  width: 100%;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 10%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.is-hidden {
+  display: none!important;
+}
+// ---- Layout - END ----
+
 // ---- Flex box ----
 .is-flex {
   display: flex!important;
@@ -94,6 +144,17 @@ p {
 
 // ---- Text ----
 .has-text-white {
-  color: #fff!important;
+  color: $white!important;
 }
 // ---- Text - END ----
+
+// ---- Margin ----
+.mr-3 {
+  margin-right: 0.75rem!important;
+}
+
+.my-2 {
+  margin-top: 0.5rem!important;
+  margin-bottom: 0.5rem!important;
+}
+// ---- Margin - END ----

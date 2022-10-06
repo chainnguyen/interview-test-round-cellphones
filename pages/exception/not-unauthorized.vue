@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="cps-container cps-body">
     <h2>403 Page</h2>
     <p>You are not allowed to access</p>
     <nuxt-link to="/">Back to homepage</nuxt-link>

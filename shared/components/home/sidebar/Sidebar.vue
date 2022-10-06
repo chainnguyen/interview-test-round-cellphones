@@ -1,25 +1,25 @@
 <template>
-  <nav>
-    nav bar cha nè
+  <div>
+    side bar cha nè
 
     <template v-for="(item, index) in ROOT_NAVBAR">
-      <nav-bar-item :key="index" :item="item"/>
+      <sidebar-item :key="index" :item="item"/>
     </template>
-  </nav>
+  </div>
 </template>
 
 <script>
 // Composition
 import { defineComponent } from '@nuxtjs/composition-api'
 // Components
-import NavBarItem from '@/shared/components/home/navbar/NavBarItem'
+import SidebarItem from '@/shared/components/home/sidebar/SidebarItem'
 // Others
 import { ROOT_NAVBAR } from '@/core/enums/navbar/root-navbar.enum'
 
 export default defineComponent({
-  name: 'NavBarComponent',
+  name: 'SidebarComponent',
 
-  components: { NavBarItem },
+  components: { SidebarItem },
 
   setup() {
     return {
