@@ -1,5 +1,9 @@
 <template>
-  <Tutorial/>
+  <section>
+    <h2>500 Page</h2>
+    <p>Server error</p>
+    <nuxt-link to="/">Back to homepage</nuxt-link>
+  </section>
 </template>
 
 <script>
@@ -7,6 +11,6 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  name: 'IndexPage'
+  name: 'ServerErrorPage'
 })
 </script>

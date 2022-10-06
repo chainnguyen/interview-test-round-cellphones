@@ -37,7 +37,13 @@ export default {
   css: ['@/assets/scss/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/dayjs', '@/plugins/swiper'],
+  plugins: [
+    '@/plugins/dayjs',
+    '@/plugins/swiper',
+    '@/shared/directives',
+    '@/shared/helpers',
+    '@/shared/mixins'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -69,7 +75,7 @@ export default {
     extendRoutes(routes, resolve) {
       routes.push({
         path: '/:catchAll(.*)',
-        component: resolve(__dirname, 'pages/exception/404.vue')
+        component: resolve(__dirname, 'pages/exception/not-found.vue')
       })
     },
     middleware: []
