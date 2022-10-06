@@ -14,7 +14,7 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  name: 'NavBarItemComponent',
+  name: 'SidebarItemComponent',
 
   props: {
     item: { type: Object, required: true, default: () => {} },

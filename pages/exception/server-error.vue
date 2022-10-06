@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="cps-container cps-body">
     <h2>500 Page</h2>
     <p>Server error</p>
     <nuxt-link to="/">Back to homepage</nuxt-link>

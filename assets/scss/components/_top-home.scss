@@ -1,0 +1,12 @@
+.block-top-home {
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+
+  &__right-banner {
+    width: 265px;
+    @media #{$info-ipad-pro} {
+      display: none;
+    }
+  }
+}

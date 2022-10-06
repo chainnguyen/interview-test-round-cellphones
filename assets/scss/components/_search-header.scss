@@ -1,0 +1,70 @@
+@import "assets/scss/helpers/variables";
+
+.box-search {
+  width: 300px;
+  float: left;
+  margin: 0 10px 0 0;
+  @media #{$info-ipad-pro} {
+    width: 200px;
+  }
+  @media #{$info-ipad} {
+    width: 100%;
+  }
+
+  form {
+    box-sizing: border-box;
+    position: relative;
+
+    .cps-group-input {
+      background-color: $white;
+      border-radius: 10px;
+
+      .input-group-btn {
+        button {
+          background-color: $white;
+          box-sizing: border-box;
+          height: 34px;
+          border: 0;
+          border-radius: 10px 0 0 10px;
+          color: #707070;
+          svg {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .cps-input {
+        width: 100%;
+        font-size: 16px;
+        border-radius: 0 10px 10px 0;
+        outline: none;
+        border: 0;
+        padding: 0.5rem 1rem 0.5rem 0.6rem;
+      }
+
+      .box-search-result {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        width: 100%;
+        min-height: 44px;
+        max-height: 500px;
+        padding: 10px 0 0;
+        border-radius: 0 0 10px 10px;
+        background: #fff;
+        z-index: 31;
+        overflow: hidden;
+      }
+
+      #btn-close-search {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        background: transparent;
+        font-size: 40px;
+        z-index: 31;
+        line-height: 1;
+      }
+    }
+  }
+}

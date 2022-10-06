@@ -1,8 +1,10 @@
 <template>
-  <main>
-    <nav-bar/>
-    <sliding-banner/>
-    <right-banner/>
+  <main class="cps-container cps-body">
+    <section class="block-top-home is-flex is-justify-content-between">
+      <sidebar/>
+      <sliding-banner/>
+      <right-banner/>
+    </section>
     <horizontal-banner/>
   </main>
 </template>
@@ -11,7 +13,7 @@
 // Composition
 import { defineComponent } from '@nuxtjs/composition-api'
 // Components
-import NavBar from '@/shared/components/home/navbar/NavBar'
+import Sidebar from '~/shared/components/home/sidebar/Sidebar'
 import SlidingBanner from '@/shared/components/home/banner/SlidingBanner'
 import RightBanner from '@/shared/components/home/banner/RightBanner'
 import HorizontalBanner from '@/shared/components/home/banner/HorizontalBanner'
@@ -20,7 +22,7 @@ export default defineComponent({
   name: 'HomePage',
 
   components: {
-    NavBar,
+    Sidebar,
     SlidingBanner,
     RightBanner,
     HorizontalBanner
