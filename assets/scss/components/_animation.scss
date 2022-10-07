@@ -1,0 +1,15 @@
+@import "/assets/scss/helpers/mixins";
+
+@include keyframes(pulsing) {
+  100% {
+    box-shadow: 0 0 0 20px rgb(232 76 61 / 0%);
+  }
+}
+
+@include keyframes(bounceIn) {
+  0% { transform: scale(0) }
+  30% { transform: scale(1.25) }
+  50% { transform: scale(.9) }
+  70% { transform: scale(1.1) }
+  80% { transform: scale(1) }
+}

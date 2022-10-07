@@ -1,2 +1,50 @@
 @import "assets/scss/helpers/mixins";
 @import "assets/scss/helpers/variables";
+
+.block-box-price {
+  .box-info__box-price {
+    @media #{$info-phone-medium} {
+      .box-info__box-price {
+        @include flex();
+        flex-wrap: wrap;
+        align-items: flex-end;
+      }
+    }
+    .product__price--show {
+      display: inline-block;
+      margin-bottom: 10px!important;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: $primary-color;
+    }
+
+    .product__price--through {
+      position: relative;
+      top: 2px;
+      display: inline-block;
+      margin: 0 0 10px 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: line-through;
+      color: $text-dark-color;
+    }
+
+    .product__price--percent {
+      width: 80px;
+      height: 26px;
+      margin: 0 0 10px 10px;
+      background-color: $primary-color;
+      border-radius: 3px;
+
+      p {
+        font-size: 12px;
+        text-align: center;
+        color: $white;
+        font-weight: 600;
+        width: 100%;
+        margin: 5px 0 0;
+      }
+    }
+  }
+}
