@@ -1,5 +1,6 @@
 [
   {
+    "product_id": "product_id_01",
     "product_name": "Redmi A1",
     "product_banner": "https://image.cellphones.com.vn/200x/media/catalog/product//w/1/w1q1111c_.jpg",
     "historical_cost": 2190000,
@@ -8,6 +9,7 @@
     "is_favorite": false
   },
   {
+    "product_id": "product_id_02",
     "product_name": "Xiaomi Redmi Note 11",
     "product_banner": "https://image.cellphones.com.vn/200x/media/catalog/product//8/0/800x800-1-640x640-5_2.png",
     "historical_cost": 4690000,
@@ -16,6 +18,7 @@
     "is_favorite": false
   },
   {
+    "product_id": "product_id_03",
     "product_name": "Redmi Pad 5G 3GB 64GB",
     "product_banner": "https://image.cellphones.com.vn/200x/media/catalog/product//1/w/1w2kuj.jpg",
     "historical_cost": 5790000,
@@ -24,6 +27,7 @@
     "is_favorite": false
   },
   {
+    "product_id": "product_id_04",
     "product_name": "Vivo V25 5G 8GB 128GB",
     "product_banner": "https://image.cellphones.com.vn/200x/media/catalog/product//v/i/vivo_v25_5g_8gb_128gb-removebg-preview_1.png",
     "historical_cost": 10490000,
@@ -32,6 +36,7 @@
     "is_favorite": true
   },
   {
+    "product_id": "product_id_05",
     "product_name": "Samsung Galaxy A03 (3GB - 32GB)",
     "product_banner": "https://image.cellphones.com.vn/200x/media/catalog/product//s/c/screenshot_2_39.png",
     "historical_cost": 2990000,
@@ -40,6 +45,7 @@
     "is_favorite": false
   },
   {
+    "product_id": "product_id_06",
     "product_name": "Samsung Galaxy Tab S8 WIFI",
     "product_banner": "https://image.cellphones.com.vn/200x/media/catalog/product//t/a/tab_s8_2.jpg",
     "historical_cost": 14290000,
@@ -48,6 +54,7 @@
     "is_favorite": false
   },
   {
+    "product_id": "product_id_07",
     "product_name": "Xiaomi Redmi Note 11",
     "product_banner": "https://image.cellphones.com.vn/200x/media/catalog/product//8/0/800x800-1-640x640-5_2.png",
     "historical_cost": 4690000,
@@ -56,6 +63,7 @@
     "is_favorite": false
   },
   {
+    "product_id": "product_id_08",
     "product_name": "Redmi Pad 5G 3GB 64GB",
     "product_banner": "https://image.cellphones.com.vn/200x/media/catalog/product//1/w/1w2kuj.jpg",
     "historical_cost": 5790000,

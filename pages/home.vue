@@ -6,6 +6,8 @@
       <right-banner/>
     </section>
     <horizontal-banner/>
+
+    <hot-sale/>
   </main>
 </template>
 
@@ -17,6 +19,7 @@ import Sidebar from '~/shared/components/home/sidebar/Sidebar'
 import SlidingBanner from '@/shared/components/home/banner/SlidingBanner'
 import RightBanner from '@/shared/components/home/banner/RightBanner'
 import HorizontalBanner from '@/shared/components/home/banner/HorizontalBanner'
+import HotSale from '@/shared/components/home/hotsale/HotSale'
 
 export default defineComponent({
   name: 'HomePage',
@@ -25,11 +28,8 @@ export default defineComponent({
     Sidebar,
     SlidingBanner,
     RightBanner,
-    HorizontalBanner
-  },
-
-  setup() {
-    return {}
+    HorizontalBanner,
+    HotSale
   }
 })
 </script>
