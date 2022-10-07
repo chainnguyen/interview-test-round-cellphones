@@ -1,22 +1,24 @@
 <template>
-  <div id="menu-main" class="menu-container">
+  <div id="menu-main" class="menu-container"
+       @mouseleave.prevent="getHoverMenu('')">
     <!-- Root menu -->
     <div class="menu-wrapper space-bread-crumb">
       <div class="menu-tree">
         <sidebar-item v-for="(item, index) in ROOT_NAVBAR"
                       :key="index"
                       :item="item"
+                      @activeItemMenu="getHoverMenu($event)"
         />
       </div>
       <!-- Children menu -->
-      <sidebar-children/>
+      <sidebar-children v-if="activeItemMenu" :type="activeItemMenu"/>
     </div>
   </div>
 </template>
 
 <script>
 // Composition
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, ref } from '@nuxtjs/composition-api'
 // Components
 import SidebarItem from '@/shared/components/home/sidebar/SidebarItem'
 import SidebarChildren from '@/shared/components/home/sidebar/SidebarChildren'
@@ -32,8 +34,17 @@ export default defineComponent({
   },
 
   setup() {
+    const activeItemMenu = ref('')
+
+    const getHoverMenu = (dependent) => {
+      activeItemMenu.value = dependent
+    }
+
     return {
-      ROOT_NAVBAR
+      activeItemMenu,
+
+      ROOT_NAVBAR,
+      getHoverMenu
     }
   }
 })
