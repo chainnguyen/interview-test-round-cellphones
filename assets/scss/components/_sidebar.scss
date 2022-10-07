@@ -3,8 +3,6 @@
 
 #menu-main {
   &.menu-container {
-    //display: contents;
-
     .menu-wrapper {
       position: absolute;
       top: 70px;
@@ -24,6 +22,9 @@
         padding: 0;
         @media #{$info-ipad-medium} {
           width: 175px;
+        }
+        @media #{$info-ipad-small} {
+          width: 165px;
         }
 
         .label-menu-tree {
@@ -69,6 +70,37 @@
                 font-size: 12px;
               }
             }
+          }
+        }
+      }
+
+      .menu-tree-child {
+        position: absolute;
+        width: calc(100% - 205px);
+        background-color: #fff;
+        border-radius: 0 10px 10px 10px;
+        flex-wrap: wrap;
+        min-height: 375px;
+        z-index: 990;
+        top: 0;
+        left: 205px;
+        padding: 0 15px;
+
+        .group {
+          padding: 10px;
+          font-size: 14px;
+        }
+
+        .menu-item {
+          padding: 5px 0;
+          margin-bottom: 0!important;
+        }
+
+        .label-wrapper {
+          color: $text-dark-color;
+          font-size: 13px;
+          &:hover {
+            color: $primary-color;
           }
         }
       }

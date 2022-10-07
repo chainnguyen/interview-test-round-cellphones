@@ -22,7 +22,6 @@ body {
   scroll-behavior: smooth;
 }
 
-
 html {
   font-size: $font-size-base;
   min-height: 100%;
@@ -65,8 +64,38 @@ h1, h2, h3, h4, h5, h6 {
   word-break: break-all;
 }
 
+strong {
+  color: #363636;
+  font-weight: 700;
+}
+
 p {
   word-break: break-all;
+}
+
+@media print, screen and (min-width: 769px) {
+  .columns:not(.is-desktop) {
+    display: flex;
+  }
+}
+
+.columns:last-child {
+  margin-bottom: -0.75rem;
+}
+
+.column {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 0.75rem;
+}
+
+@media print, screen and (min-width: 769px) {
+  .column.is-one-fifth, .column.is-one-fifth-tablet {
+    flex: none;
+    width: 20%;
+  }
 }
 
 // ---- Layout ----

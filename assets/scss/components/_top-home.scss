@@ -25,6 +25,13 @@
       height: 320px;
       width: 175px;
     }
+    @media #{$info-ipad-small} {
+      height: 280px;
+      width: 165px;
+    }
+    @media #{$info-phone-medium} {
+      display: none;
+    }
 
     .menu-wrapper {
       position: unset;

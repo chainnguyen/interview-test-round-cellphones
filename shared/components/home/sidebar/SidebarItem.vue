@@ -1,5 +1,9 @@
 <template>
-  <nuxt-link :to="{ path: item.path }" target="_self" class="label-menu-tree">
+  <nuxt-link :to="{ path: item.path }"
+             tag="a"
+             target="_self"
+             class="label-menu-tree"
+             @mouseenter.native.prevent="$emit('activeItemMenu', item.dependent)">
     <div class="label-item">
       <i v-if="item.icon"
          class="icons-cate"
@@ -24,10 +28,6 @@ export default defineComponent({
 
   props: {
     item: { type: Object, required: true, default: () => {} },
-  },
-
-  setup() {
-    return {}
   }
 })
 </script>
