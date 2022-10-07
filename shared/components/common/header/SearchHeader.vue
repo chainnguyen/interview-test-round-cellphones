@@ -28,20 +28,20 @@
       </div>
     </form>
 
-    <div class="header-overlay"></div>
+    <header-overlay :open="false"/>
   </div>
 </template>
 
 <script>
 // Composition
 import { defineComponent } from '@nuxtjs/composition-api'
+// Components
+import HeaderOverlay from '@/shared/components/common/header/HeaderOverlay'
 
 export default defineComponent({
   name: 'SearchHeaderComponent',
 
-  setup() {
-    return {}
-  }
+  components: { HeaderOverlay }
 })
 </script>
 

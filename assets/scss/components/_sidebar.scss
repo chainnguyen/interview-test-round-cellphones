@@ -1,0 +1,77 @@
+@import "assets/scss/helpers/mixins";
+@import "assets/scss/helpers/variables";
+
+#menu-main {
+  &.menu-container {
+    //display: contents;
+
+    .menu-wrapper {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      max-width: 1200px;
+      z-index: 980;
+
+      .menu-tree {
+        top: 0;
+        left: 0;
+        background-color: $white;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 205px;
+        min-height: 375px;
+        padding: 0;
+        @media #{$info-ipad-medium} {
+          width: 175px;
+        }
+
+        .label-menu-tree {
+          display: block;
+          padding: 2px 10px;
+          &.active,
+          &:hover {
+            border-radius: 5px;
+            background: #f3f4f6;
+          }
+
+          .label-item {
+            @include flex();
+            width: 100%;
+            align-items: center;
+            text-decoration: none;
+            color: $sidebar-text;
+            min-height: 31.3px;
+            cursor: pointer;
+
+            i.icons-cate {
+              width: 25px;
+              height: 25px;
+              margin-right: 5px;
+              text-align: center;
+            }
+
+            span {
+              flex: 1;
+              font-size: 12px;
+              font-weight: 700;
+              color: $sidebar-text;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+
+            .icon-right {
+              width: 7.5px;
+              svg {
+                fill: #777;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

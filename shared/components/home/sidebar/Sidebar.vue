@@ -1,10 +1,16 @@
 <template>
-  <div>
-    side bar cha nè
-
-    <template v-for="(item, index) in ROOT_NAVBAR">
-      <sidebar-item :key="index" :item="item"/>
-    </template>
+  <div id="menu-main" class="menu-container">
+    <!-- Root menu -->
+    <div class="menu-wrapper space-bread-crumb">
+      <div class="menu-tree">
+        <sidebar-item v-for="(item, index) in ROOT_NAVBAR"
+                      :key="index"
+                      :item="item"
+        />
+      </div>
+      <!-- Children menu -->
+      <sidebar-children/>
+    </div>
   </div>
 </template>
 
@@ -13,13 +19,17 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 // Components
 import SidebarItem from '@/shared/components/home/sidebar/SidebarItem'
+import SidebarChildren from '@/shared/components/home/sidebar/SidebarChildren'
 // Others
 import { ROOT_NAVBAR } from '@/core/enums/navbar/root-navbar.enum'
 
 export default defineComponent({
   name: 'SidebarComponent',
 
-  components: { SidebarItem },
+  components: {
+    SidebarItem,
+    SidebarChildren
+  },
 
   setup() {
     return {
@@ -28,3 +38,8 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+@import "@/assets/scss/components/top-home";
+@import "@/assets/scss/components/sidebar";
+</style>

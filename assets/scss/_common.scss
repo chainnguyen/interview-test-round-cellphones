@@ -1,6 +1,10 @@
 @import "helpers/variables";
 @import "helpers/mixins";
 
+*, :after, :before {
+  box-sizing: inherit;
+}
+
 body {
   font-family: $font-family-sans-serif !important;
   color: $background-color !important;
@@ -36,28 +40,13 @@ html {
   }
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-textarea {
-  resize: none;
-}
-
 a {
-  color: #0053FF!important;
+  color: #485fc7;
   cursor: pointer;
   text-decoration: none;
 }
 
 figure {
-  margin: 0;
   text-align: center;
 }
 
@@ -78,7 +67,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   word-break: break-all;
-  margin: 0;
 }
 
 // ---- Layout ----
@@ -143,12 +131,37 @@ p {
 // ---- Flex box - END ----
 
 // ---- Text ----
+.title {
+  color: #363636;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
+.subtitle,
+.title {
+  word-break: break-word;
+}
+
+span {
+  font-style: inherit;
+  font-weight: inherit;
+}
+
 .has-text-white {
   color: $white!important;
 }
 // ---- Text - END ----
 
 // ---- Margin ----
+.mb-0 {
+  margin-bottom: 0!important;
+}
+
+.mt-3 {
+  margin-top: 0.75rem!important;
+}
+
 .mr-3 {
   margin-right: 0.75rem!important;
 }

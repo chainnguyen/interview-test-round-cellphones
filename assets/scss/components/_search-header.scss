@@ -1,3 +1,4 @@
+@import "assets/scss/helpers/mixins";
 @import "assets/scss/helpers/variables";
 
 .box-search {
@@ -8,6 +9,9 @@
     width: 200px;
   }
   @media #{$info-ipad} {
+    width: 400px;
+  }
+  @media #{$info-phone-medium} {
     width: 100%;
   }
 

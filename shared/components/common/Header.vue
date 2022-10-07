@@ -21,7 +21,9 @@
           </nuxt-link>
 
           <!-- Category -->
-          <a href="javascript:void(0)" class="header-item btn-menu">
+          <a href="javascript:void(0)"
+             class="header-item btn-menu"
+             @click.prevent="toggleFlagByType('categories')">
             <div class="about__box-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.99 26.99">
                 <defs>
@@ -45,8 +47,76 @@
             </div>
             <div class="about__box-content"><p v-text="'Danh mục'"/></div>
           </a>
+          <sidebar-component v-if="flagController.controlCategories"/>
 
           <!-- Region -->
+          <div id="dropdown-region"
+               role="menu"
+               class="dropdown"
+               :class="{ 'is-active': flagController.controlRegion }"
+               @click.prevent="toggleFlagByType('region')">
+            <div class="dropdown-trigger">
+              <div class="box-local-store">
+                <div class="box-icon">
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.22 30.36" width="25" height="25">
+                      <defs></defs>
+                      <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                          <path
+                            d="M11.61.9A10.77,10.77,0,0,0,.9,11.69C.9,20.14,10.6,28.87,11,29.23a.87.87,0,0,0,1.18,0c.42-.36,10.12-9.09,10.12-17.54A10.77,10.77,0,0,0,11.61.9Z"
+                            class="cls-1"></path>
+                          <path d="M11.61,16.35a4.74,4.74,0,1,1,4.74-4.74,4.75,4.75,0,0,1-4.74,4.74Z"
+                                class="cls-1"></path>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="box-content">
+                  <p class="title">Xem giá tại</p>
+                  <p><span v-text="REGIONS[selectedRegion].region"/> 
+                    <svg fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10" height="10">
+                      <path
+                        d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"></path>
+                    </svg>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Region list -->
+            <div id="dropdown-region-menu" role="menu" class="dropdown-menu">
+              <div class="dropdown-content">
+                <template v-for="(item, index) in REGIONS">
+                  <a :key="item.region_id"
+                     class="dropdown-item"
+                     :class="{ 'active': item.region_id === selectedRegion }"
+                     @click.prevent="switchRegion(item.region_id)"
+                     v-text="item.region"/>
+                  <hr v-if="index !== (REGIONS.length - 1)" class="dropdown-divider">
+                </template>
+              </div>
+            </div>
+            <!-- Suggestions choose store popup -->
+            <div class="suggestions-choose-store" style="display: none">
+              <div class="box-content d-flex justify-content-around align-items-center">
+                <div>
+                  <svg height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                    <path
+                      d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"></path>
+                  </svg>
+                </div>
+                <p class="mb-0 font-14">Hãy chọn địa chỉ cụ thể để chúng tôi cung cấp chính xác giá và khuyến mãi.</p>
+              </div>
+              <div class="box-btn d-flex mt-3">
+                <button type="button" class="button is-success mr-3">Chọn địa điểm
+                </button>
+                <button type="button" class="button is-danger">Đóng</button>
+              </div>
+            </div>
+            <header-overlay :open="flagController.controlRegion"/>
+          </div>
 
           <!-- Search -->
           <search-header/>
@@ -145,6 +215,7 @@
               <p class="title">Tra cứu<br>đơn hàng</p>
             </div>
           </nuxt-link>
+          <!-- Information - END -->
 
           <!-- Cart -->
           <nuxt-link :to="{ path: '/cart' }" class="header-item about-cart">
@@ -176,22 +247,56 @@
           </nuxt-link>
 
           <!-- Sign in -->
+          <div class="header-item about-5 about-smember cta-smember"
+               @click.prevent="toggleFlagByType('signIn')">
+            <div class="about__box-icon">
+              <svg id="icon-smember" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" width="20">
+                <defs>
+                  <style>#icon-smember .cls-1 {
+                    fill: none;
+                    stroke: #fff;
+                    stroke-width: 30px;
+                  }</style>
+                </defs>
+
+                <title v-text=" 'Smember' "/>
+
+                <g id="Layer_2" data-name="Layer 2">
+                  <g id="Layer_1-2" data-name="Layer 1">
+                    <circle cx="280" cy="280" r="265" class="cls-1"></circle>
+                    <circle cx="280" cy="210" r="115" class="cls-1"></circle>
+                    <path d="M86.82,461.4C124.71,354.71,241.91,298.93,348.6,336.82A205,205,0,0,1,473.18,461.4"
+                          class="cls-1"></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="about__box-content">
+              <span class="title" v-text=" 'Đăng nhập' "/>
+            </div>
+          </div>
         </nav>
       </div>
       <!-- Container - END -->
     </header>
 
     <div class="clear"></div>
+    <header-overlay :open.sync="flagController.controlCategories"/>
+    <header-overlay :open.sync="flagController.controlSignIn"/>
   </div>
 </template>
 
 <script>
 // Composition
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, ref } from '@nuxtjs/composition-api'
 // Components
 import TopBarHeader from '~/shared/components/common/header/TopBarHeader'
 import LogoComponent from '@/shared/components/common/Logo'
 import SearchHeader from '@/shared/components/common/header/SearchHeader'
+import SidebarComponent from '@/shared/components/home/sidebar/Sidebar'
+import HeaderOverlay from '@/shared/components/common/header/HeaderOverlay'
+// Others
+import { REGIONS } from '~/core/enums/region.enum'
 
 export default defineComponent({
   name: 'HeaderComponent',
@@ -199,15 +304,55 @@ export default defineComponent({
   components: {
     TopBarHeader,
     LogoComponent,
-    SearchHeader
+    SearchHeader,
+    SidebarComponent,
+    HeaderOverlay
   },
 
   setup() {
-    return {}
+    const selectedRegion = ref(0)
+    const flagController = ref({
+      controlCategories: false,
+      controlRegion: false,
+      controlSignIn: false
+    })
+
+    const switchRegion = (idx) => {
+      if (!idx && idx !== 0) return
+      selectedRegion.value = idx
+      // action loading switch region
+    }
+
+    /**
+     * @param type{string} ['categories', 'region', 'signIn']
+     */
+    const toggleFlagByType = (type) => {
+      switch (type) {
+        case 'categories':
+          flagController.value['controlCategories'] = !flagController.value['controlCategories']
+          break
+        case 'region':
+          flagController.value['controlRegion'] = !flagController.value['controlRegion']
+          break
+        case 'signIn':
+          flagController.value['controlSignIn'] = !flagController.value['controlSignIn']
+          break
+      }
+    }
+
+    return {
+      selectedRegion,
+      flagController,
+
+      REGIONS,
+      switchRegion,
+      toggleFlagByType
+    }
   }
 })
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/components/dropdown";
 @import "@/assets/scss/layouts/header";
 </style>
