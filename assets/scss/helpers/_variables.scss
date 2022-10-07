@@ -1,5 +1,5 @@
 // Typography
-$font-family-sans-serif: "Open San", sans-serif;
+$font-family-sans-serif: sans-serif;
 $font-size-base: 16px;
 
 // Color
@@ -8,18 +8,11 @@ $default-color: #000000;
 $background-color: #4a4a4a;
 $primary-color: #d70018;
 $secondary-color: #121212;
-$light-blue: #0337fd9e;
-$purple-light: #f5f7fb;
-$red-error: #cd201f;
-$cursor-dot: #dc5656;
-$cursor-dot-outline: mix(white, $cursor-dot, 25%);
-$scroll-bar-default: #CACACA;
-$scroll-bar-blue: #4ea0eced;
-$error-color: #cfcfcf;
 $success-color: #5cb85c;
 $success-color-2: #4cae4c;
 $danger-color: #d9534f;
 $danger-color-2: #d43f3a;
+$sidebar-text: #343a40;
 
 // Breakpoint responsive
 $info-desktop: "only screen and (max-width : 1919px)";

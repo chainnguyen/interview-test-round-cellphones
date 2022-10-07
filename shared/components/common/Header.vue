@@ -47,6 +47,7 @@
             </div>
             <div class="about__box-content"><p v-text="'Danh mục'"/></div>
           </a>
+          <sidebar-component v-if="flagController.controlCategories"/>
 
           <!-- Region -->
           <div id="dropdown-region"
@@ -247,7 +248,7 @@
 
           <!-- Sign in -->
           <div class="header-item about-5 about-smember cta-smember"
-               @click.prevent="toggleFlagByType('signIn', 'open')">
+               @click.prevent="toggleFlagByType('signIn')">
             <div class="about__box-icon">
               <svg id="icon-smember" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" width="20">
                 <defs>
@@ -280,6 +281,7 @@
     </header>
 
     <div class="clear"></div>
+    <header-overlay :open.sync="flagController.controlCategories"/>
     <header-overlay :open.sync="flagController.controlSignIn"/>
   </div>
 </template>
@@ -291,6 +293,7 @@ import { defineComponent, ref } from '@nuxtjs/composition-api'
 import TopBarHeader from '~/shared/components/common/header/TopBarHeader'
 import LogoComponent from '@/shared/components/common/Logo'
 import SearchHeader from '@/shared/components/common/header/SearchHeader'
+import SidebarComponent from '@/shared/components/home/sidebar/Sidebar'
 import HeaderOverlay from '@/shared/components/common/header/HeaderOverlay'
 // Others
 import { REGIONS } from '~/core/enums/region.enum'
@@ -302,6 +305,7 @@ export default defineComponent({
     TopBarHeader,
     LogoComponent,
     SearchHeader,
+    SidebarComponent,
     HeaderOverlay
   },
 
@@ -321,24 +325,17 @@ export default defineComponent({
 
     /**
      * @param type{string} ['categories', 'region', 'signIn']
-     * @param command{string} ['open', 'close', 'toggle']
      */
-    const toggleFlagByType = (type, command = 'toggle') => {
+    const toggleFlagByType = (type) => {
       switch (type) {
         case 'categories':
-          command === 'toggle'
-            ? flagController.value['controlCategories'] = !flagController.value['controlCategories']
-            : flagController.value['controlCategories'] = command === 'open'
+          flagController.value['controlCategories'] = !flagController.value['controlCategories']
           break
         case 'region':
-          command === 'toggle'
-            ? flagController.value['controlRegion'] = !flagController.value['controlRegion']
-            : flagController.value['controlRegion'] = command === 'open'
+          flagController.value['controlRegion'] = !flagController.value['controlRegion']
           break
         case 'signIn':
-          command === 'toggle'
-            ? flagController.value['controlSignIn'] = !flagController.value['controlSignIn']
-            : flagController.value['controlSignIn'] = command === 'open'
+          flagController.value['controlSignIn'] = !flagController.value['controlSignIn']
           break
       }
     }

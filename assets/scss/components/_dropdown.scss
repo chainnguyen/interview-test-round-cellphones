@@ -1,3 +1,4 @@
+@import "assets/scss/helpers/mixins";
 @import "assets/scss/helpers/variables";
 
 .dropdown-item {
@@ -35,11 +36,11 @@ button.dropdown-item {
 
 #dropdown-region.dropdown .dropdown-menu {
   z-index: 31;
-  transform: translateZ(2px);
+  @include transform(translateZ(2px));
 }
 
 .dropdown {
-  display: inline-flex;
+  @include flex-inline();
   position: relative;
   vertical-align: top;
   z-index: 31;
@@ -108,7 +109,7 @@ button.dropdown-item {
       color: $white;
 
       p {
-        display: flex;
+        @include flex();
         align-items: center;
         margin-bottom: 0;
         font-size: 12px;
@@ -139,7 +140,7 @@ button.dropdown-item {
     position: absolute;
     top: calc(100% + 10px);
     left: 0;
-    display: flex;
+    @include flex();
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
@@ -159,7 +160,7 @@ button.dropdown-item {
     }
 
     .box-content {
-      display: flex;
+      @include flex();
 
       svg {
         fill: $primary-color;
