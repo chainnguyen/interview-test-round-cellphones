@@ -44,6 +44,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/helpers/variables";
+
 #topBarHeader {
   position: relative;
   width: 100%;
@@ -68,6 +70,12 @@ export default defineComponent({
     -webkit-animation: pulsing 1.25s cubic-bezier(.66,0,0,1) infinite;
     animation: pulsing 1.25s cubic-bezier(.66,0,0,1) infinite;
     transition: all .3s ease-in-out;
+  }
+
+  @media #{$info-phone-normal} {
+    .text-topbar {
+      font-size: 12px;
+    }
   }
 }
 
